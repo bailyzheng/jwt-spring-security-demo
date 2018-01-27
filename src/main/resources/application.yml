@@ -4,22 +4,32 @@ server:
 
 # JACKSON
 spring:
-  jackson:
-    serialization:
-      INDENT_OUTPUT: true
-
-  h2:
-    console:
-      enabled: true
-
-  datasource:
-    url: jdbc:h2:~/test;DB_CLOSE_ON_EXIT=FALSE
-    driverClassName: org.h2.Driver
-    username: sa
-    password:
-
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      # possible values: validate | update | create | create-drop
+      ddl-auto: create-drop
+  datasource:
+    url: jdbc:mysql://localhost:3306/jwttest?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: mysql@weijie
+#  jackson:
+#    serialization:
+#      INDENT_OUTPUT: true
+#
+#  h2:
+#    console:
+#      enabled: true
+#
+#  datasource:
+#    url: jdbc:h2:~/test;DB_CLOSE_ON_EXIT=FALSE
+#    driverClassName: org.h2.Driver
+#    username: sa
+#    password:
+#
+#  jpa:
+#    database-platform: org.hibernate.dialect.H2Dialect
 
 jwt:
   header: Authorization
