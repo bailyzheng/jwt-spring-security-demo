@@ -49,3 +49,7 @@ management:
   security:
     enabled: false
   context-path: /actuator
+
+endpoints:
+  shutdown:
+    enabled: true
